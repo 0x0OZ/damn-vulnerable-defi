@@ -37,10 +37,9 @@ describe('[Challenge] Naive receiver', function () {
     });
 
     it('Execution', async function () {
-        /** CODE YOUR SOLUTION HERE */
-        let naiveAttack = await ethers.getContractFactory('naiveAttack', deployer);
-        let attack = await naiveAttack.deploy(pool.address, receiver.address)
-        await attack.attack();
+        let NaiveReceiverAttack = await ethers.getContractFactory('NaiveReceiverAttack', deployer);
+        let naiveReceiverAttack = await NaiveReceiverAttack.deploy(pool.address, receiver.address)
+        await naiveReceiverAttack.attack();
     });
 
     after(async function () {
